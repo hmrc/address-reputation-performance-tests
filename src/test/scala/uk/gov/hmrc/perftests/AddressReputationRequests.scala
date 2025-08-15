@@ -32,15 +32,16 @@ object AddressReputationRequests extends ServicesConfiguration {
 
     val request = InsightsRequest(
       address = Address(
-        addressLine1 = "${addressLine1}",
-        addressLine2 = Some("${addressLine2}"),
-        addressLine3 = Some("${addressLine3}"),
-        addressLine4 = Some("${addressLine4}"),
-        addressLine5 = Some("${addressLine5}"),
-        postcode = Some("${postcode}"),
-        uprn = Some("${uprn}"),
-        country = "${country}"
-      )
+        addressLine1 = "#{addressLine1}",
+        addressLine2 = Some("#{addressLine2}"),
+        addressLine3 = Some("#{addressLine3}"),
+        addressLine4 = Some("#{addressLine4}"),
+        addressLine5 = Some("#{addressLine5}"),
+        postcode = Some("#{postcode}"),
+        uprn = Some("#{uprn}"),
+        country = "#{country}"
+      ),
+      caseId = "#{caseId}"
     )
 
     http("POST insights")
@@ -53,19 +54,19 @@ object AddressReputationRequests extends ServicesConfiguration {
   val postCache: HttpRequestBuilder = {
     val request = new CacheRequest(
       address = CacheAddress(
-        addressLine1 = "${addressLine1}",
-        addressLine2 = Some("${addressLine2}"),
-        addressLine3 = Some("${addressLine3}"),
-        addressLine4 = Some("${addressLine4}"),
-        addressLine5 = Some("${addressLine5}"),
-        uprn = Some("${uprn}"),
-        postcode = Some("${postcode}"),
-        country = "${country}",
-        addressContext = Some("${addressContext}"),
-        eventType = Some("${eventType}"),
-        userId = Some("${userId}")
+        addressLine1 = "#{addressLine1}",
+        addressLine2 = Some("#{addressLine2}"),
+        addressLine3 = Some("#{addressLine3}"),
+        addressLine4 = Some("#{addressLine4}"),
+        addressLine5 = Some("#{addressLine5}"),
+        uprn = Some("#{uprn}"),
+        postcode = Some("#{postcode}"),
+        country = "#{country}",
+        addressContext = Some("#{addressContext}"),
+        eventType = Some("#{eventType}"),
+        userId = Some("#{userId}")
       ),
-      caseId = "${caseId}"
+      caseId = "#{caseId}"
     )
 
     http("POST cache")

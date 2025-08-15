@@ -2,9 +2,9 @@ import sbt._
 
 object Dependencies {
 
-  val test = Seq(
-    "uk.gov.hmrc"       %% "performance-test-runner"  % "6.1.0"         % Test,
-    "com.typesafe.play" %% "play-json"                % "2.10.6"        % Test
-  )
+  val test: Seq[ModuleID] = Seq(
+    "uk.gov.hmrc"       %% "performance-test-runner"  % "6.2.0",
+    "org.playframework" %% "play-json"                % "3.0.5"
+  ).map(_ % Test)
 
 }

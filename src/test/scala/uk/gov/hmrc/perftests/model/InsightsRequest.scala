@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.perftests.model
 
-case class InsightsRequest(address: Address)
+case class InsightsRequest(address: Address, caseId: String)
 
 object InsightsRequest {
   import play.api.libs.json.{Format, Json}
